@@ -1,0 +1,26 @@
+{
+  "name": "opie_coding_challenge",
+  "version": "1.0.0",
+  "description": "Timed 10-Meter Walk Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bettyjobrotherton/OPIE_coding_challenge.git"
+  },
+  "keywords": [
+    "opie",
+    "challenge",
+    "10-meter",
+    "test"
+  ],
+  "author": "Elizabeth Brotherton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bettyjobrotherton/OPIE_coding_challenge/issues"
+  },
+  "homepage": "https://github.com/bettyjobrotherton/OPIE_coding_challenge#readme"
+}
