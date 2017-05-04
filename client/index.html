@@ -8,10 +8,14 @@
   <link rel="stylesheet" href="/client/main.less">
 </head>
 <body ng-controller="MainController">
-  {{something}}
+  <div class="container">
+    <div class="btn">{{minutes}}:{{seconds}}</div>
+    <button class="btn" ng-click="startTimer()">Start</button>
+  </div>
   <script src="../node_modules/angular/angular.js"></script>
   <!-- <script src="../node_modules/less/index.js"></script> -->
   <script src="/client/app/app.js"></script>
   <script src="/client/app/main.controller.js"></script>
+  <!-- <script src="/client/app/main.service.js"></script> -->
 </body>
 </html>
