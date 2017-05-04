@@ -1,11 +1,17 @@
-<html>
+<html ng-app="mainApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Timed 10-Meter Walk Test</title>
-  <link rel="stylesheet" href="./main.less">
+  <link rel="stylesheet" href="/node_modules/bootstrap/less/bootstrap.less">
+  <link rel="stylesheet" href="/client/main.less">
 </head>
-<body>
+<body ng-controller="MainController">
+  {{something}}
+  <script src="../node_modules/angular/angular.js"></script>
+  <!-- <script src="../node_modules/less/index.js"></script> -->
+  <script src="/client/app/app.js"></script>
+  <script src="/client/app/main.controller.js"></script>
 </body>
 </html>
