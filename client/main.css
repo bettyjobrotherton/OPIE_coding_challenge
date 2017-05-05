@@ -44,18 +44,21 @@ body {
 
 .btn-main {
   background-color: #00BBF9;
+  border-color: #00a8e0;
   color: #FFFFFF;
   font-size: 1.2em;
 }
 
 .btn-go {
   background-color: #6Eb312;
+  border-color: #609C10;
   color: #FFFFFF;
   font-size: 1.2em;
 }
 
 .btn-yield {
   background-color: #FF8234;
+  border-color: #E65800;
   color: #FFFFFF;
   font-size: 1.2em;
 }
@@ -103,4 +106,9 @@ input[type=text]:hover, textarea:hover {
 
 .like-label {
   font-weight: 700;
+}
+
+.table-head {
+  text-align: center;
+  font-size: 1.3em;
 }
