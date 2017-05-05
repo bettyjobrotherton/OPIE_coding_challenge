@@ -25,6 +25,10 @@ function MainController($scope, $window){
   $scope.showResults = showResults;
   $scope.resetTable = resetTable;
 
+  $window.onload = function() {
+    $window.document.getElementById("first-menu-item").focus();
+  };
+
   function timerCount(){
     var newMinutesValue;
     var newSecondsValue;

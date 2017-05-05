@@ -17,7 +17,7 @@ body {
   text-align: center;
   align-content: center;
   justify-content: center;
-  background-color: #7DC3D1;
+  background-color: #142A91;
   color: #FFFFFF;
 }
 
@@ -34,6 +34,9 @@ body {
 
 .nav-container {
   display: block;
+  border-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-container ul {
@@ -44,6 +47,14 @@ body {
   position: fixed;
   overflow: auto;
   width: 125px;
+  background-color: #00BBF9;
+  border-style: none;
+}
+
+li {
+  border-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .body-container div {
@@ -76,12 +87,15 @@ body {
   display: block;
   height: 2em;
   width: 100%;
-  border: 0 none;
+  border-style: none;
 }
 
-/*.btn-sidebar:active {
-  background-color: #00f9bb;
-}*/
+.btn-sidebar:focus {
+  background-color: #FFFFFF;
+  color: #00BBF9;
+  font-weight: 700;
+  outline-color: #FFFFFF;
+}
 
 .btn-regular {
   margin: 5px;
@@ -100,7 +114,7 @@ body {
   padding: 5px;
   margin: 5px;
   background-color: #F3FBFD;
-  box-shadow: inset 0 1px 1px #7DC3D1;
+  box-shadow: inset 0 2px 2px #7DC3D1;
   border-radius: 4px;
 }
 
