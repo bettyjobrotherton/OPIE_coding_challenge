@@ -1,9 +1,9 @@
 /*
-primary background color: E1F4FA;
-secondary background color: 7DC3D1;
+primary background color: #E1F4FA;
+secondary background color: #7DC3D1;
 primary color: #00BBF9;
-submit color: 6EB312;
-warning color: FF8234;
+submit color: #6EB312;
+warning color: #FF8234;
 */
 
 body {
@@ -11,26 +11,41 @@ body {
   font-size: 1.5em;
 }
 
+.header-container {
+  display: flex;
+  display: -webkit-flex;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #7DC3D1;
+  color: #FFFFFF;
+}
+
 .main-container {
   display: flex;
   display: -webkit-flex;
 }
 
-.time-container {}
+.time-container {
+  display: flex;
+  display: -webkit-flex;
+  padding: 0 10px;
+}
 
 .button-container {
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
   -webkit-flex-direction: column;
+  height: 100%;
+  /*position: fixed;
+  overflow: auto;*/
 }
 
 .btn-main {
   background-color: #00BBF9;
   color: #FFFFFF;
   font-size: 1.2em;
-  margin: 5px;
-  width: 200px;
 }
 
 .btn-go {
@@ -45,13 +60,39 @@ body {
   font-size: 1.2em;
 }
 
-.btn-under {
-  margin-top: 5px;
+.btn-sidebar {
+  margin: 5px;
+  width: 125px;
+}
+
+.btn-regular {
+  margin: 5px;
+  width: 200px;
+}
+
+.content-over {
+  margin-top: 10px;
 }
 
 #timer {
   padding-top: 10px;
   font-size: 1.5em;
+  width: fill;
+  height: 2em;
+  padding: 5px;
+  margin: 5px;
+  background-color: #E1F4FA;
+  border-radius: 5px;
+}
+
+.text-input {
+  background-color: #E1F4FA;
+  border: 0 none;
+}
+
+.text-input:hover {
+  background-color: #7DC3D1;
+  border: 0 none;
 }
 
 .inputs-form {
