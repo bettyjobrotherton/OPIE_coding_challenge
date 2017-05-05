@@ -25,8 +25,6 @@
   "homepage": "https://github.com/bettyjobrotherton/OPIE_coding_challenge#readme",
   "dependencies": {
     "angular": "^1.6.4",
-    "bootstrap": "^3.3.7",
     "express": "^4.15.2",
-    "less": "^2.7.2"
   }
 }

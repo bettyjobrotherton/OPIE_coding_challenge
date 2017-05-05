@@ -1,11 +1,62 @@
-<html>
+<html ng-app="mainApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Timed 10-Meter Walk Test</title>
-  <link rel="stylesheet" href="./main.less">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/client/main.css">
 </head>
-<body>
+<body ng-controller="MainController">
+  <div class="main-container">
+    <div class="button-container">
+      <button class="btn btn-main" ng-click="startTimer()">Start Timer</button>
+      <button class="btn btn-main" ng-click="inputTime()">Input Time</button>
+    </div>
+    <div class="time-container">
+      <div ng-show="displayTimer">
+        <div id="timer">{{minutesDisplay}}:{{secondsDisplay}}</div>
+        <button class="btn btn-main" ng-click='pauseTimer()' ng-hide="displayStart">Pause</button>
+        <button class="btn btn-main" ng-click='restartTimer()' ng-show='displayStart'>Start</button>
+        <button class="btn btn-yield" ng-click="resetTimer()">Reset</button>
+        <button class="btn btn-go" ng-click="calculateRate()">Submit</button>
+      </div>
+      <div ng-show="displayInputs">
+        <div class="form-inline inputs-form">
+          <label>Minutes: </label>
+          <input type="text" ng-model="inputMins">
+          <label>Seconds: </label>
+          <input type="text" ng-model="inputSecs">
+        </div>
+        <button class="btn btn-go btn-under" ng-click="calculateInput()">Submit</button>
+      </div>
+      <div ng-show="displayResults">
+        <p>Results: {{speed}} meters per second</p>
+        <p class="like-label">Is speed at:</p>
+        <div class="form-group">
+          <div class="radio">
+            <label>
+              <input type="radio" ng-model="speedType" value="normal">normal, comfortable speed
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" ng-model="speedType" value="fast">maximum speed
+            </label>
+          </div>
+          <label>Assistive device and/or bracing used:</label>
+          <input type="text" class="form-control" ng-model="assistance">
+          <br>
+          <label>Additional comments:</label>
+          <textarea class="form-control" rows="5" ng-model="comments"></textarea>
+        </div>
+        <button class="btn btn-go" ng-click="saveTest()">Submit</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="/client/app/app.js"></script>
+  <script src="/client/app/main.controller.js"></script>
 </body>
 </html>
