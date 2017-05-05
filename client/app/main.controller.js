@@ -9,7 +9,6 @@ function MainController($scope, $window){
   var timerInterval;
   $scope.seconds = "00";
   $scope.minutes = "0";
-  $scope.results = JSON.parse($window.localStorage['timed-test-results']);
   $scope.displayTimer = true;
   $scope.displayStart = true;
   $scope.displayResults = false;
@@ -142,6 +141,7 @@ function MainController($scope, $window){
   }
 
   function showResults(){
+    $scope.results = JSON.parse($window.localStorage['timed-test-results']);
     $scope.displayTimer = false;
     $scope.displayInputs = false;
     $scope.displayResults = false;
