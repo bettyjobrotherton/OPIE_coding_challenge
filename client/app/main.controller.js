@@ -9,10 +9,12 @@ function MainController($scope, $window){
   var timerInterval;
   $scope.seconds = "00";
   $scope.minutes = "0";
+  $scope.results = JSON.parse($window.localStorage['timed-test-results']);
   $scope.displayTimer = true;
   $scope.displayStart = true;
   $scope.displayResults = false;
   $scope.displayInputs = false;
+  $scope.displayTable = false;
   $scope.inputTime = inputTime;
   $scope.startTimer = goToTimer;
   $scope.pauseTimer = pauseTimer;
@@ -21,12 +23,7 @@ function MainController($scope, $window){
   $scope.calculateRate = calculateRate;
   $scope.calculateInput = calculateInput;
   $scope.saveTest = saveTest;
-
-  // $scope.$watch(function(){
-  //   return $scope.seconds;
-  // }, function(){
-  //   return [$scope.seconds, $scope.minutes];
-  // });
+  $scope.showResults = showResults;
 
   function timerCount(){
     var newMinutesValue;
@@ -61,6 +58,7 @@ function MainController($scope, $window){
     $scope.displayTimer = true;
     $scope.displayInputs = false;
     $scope.displayResults = false;
+    $scope.displayTable = false;
   }
 
   function pauseTimer(){
@@ -88,6 +86,7 @@ function MainController($scope, $window){
     $scope.displayInputs = true;
     $scope.displayTimer = false;
     $scope.displayResults = false;
+    $scope.displayTable = false;
     resetTimer();
   }
 
@@ -97,8 +96,8 @@ function MainController($scope, $window){
     var secs = parseInt($scope.seconds);
     var mins = parseInt($scope.minutes);
     var totalTime = (mins * 60) + secs;
-
-    $scope.speed = 6 / totalTime;
+    var speedEquate = 6 / totalTime;
+    $scope.speed = speedEquate.toFixed(3);
     $scope.displayTimer = false;
     $scope.displayResults = true;
   }
@@ -113,11 +112,11 @@ function MainController($scope, $window){
       secs = 0;
     }
     var totalTime = (mins * 60) + secs;
-
     if(totalTime === 0){
       $scope.speed = 0;
     } else {
-      $scope.speed = 6 / totalTime;
+      var speedEquate = 6 / totalTime;
+      $scope.speed = speedEquate.toFixed(3);
     }
     $scope.displayInputs = false;
     $scope.displayResults = true;
@@ -134,14 +133,18 @@ function MainController($scope, $window){
     if(!$window.localStorage['timed-test-results']){
       var testArray = [testObject];
       $window.localStorage.setItem('timed-test-results', JSON.stringify(testArray));
-      console.log($window.localStorage['timed-test-results']);
     } else {
       var arrayOfTests = JSON.parse($window.localStorage['timed-test-results']);
-      // console.log(arrayOfTests);
       arrayOfTests.push(testObject);
       $window.localStorage.setItem('timed-test-results', JSON.stringify(arrayOfTests));
-      console.log($window.localStorage['timed-test-results']);
     }
+    showResults();
+  }
+
+  function showResults(){
+    $scope.displayTimer = false;
+    $scope.displayResults = false;
+    $scope.displayTable = true;
   }
 
 }
