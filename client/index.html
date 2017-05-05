@@ -12,12 +12,14 @@
     <h1>Timed 10-Meter Walk Test</h1>
   </div>
   <div class="main-container">
-    <div class="button-container">
-      <button class="btn btn-main btn-sidebar" ng-click="startTimer()">Timer</button>
-      <button class="btn btn-main btn-sidebar" ng-click="inputTime()">Input Time</button>
-      <button class="btn btn-main btn-sidebar" ng-click="showResults()">Results</button>
+    <div class="nav-container">
+      <ul>
+        <li><button class="btn-main btn-sidebar" ng-click="startTimer()">Timer</button></li>
+        <li><button class="btn-main btn-sidebar" ng-click="inputTime()">Input Time</button></li>
+        <li><button class="btn-main btn-sidebar" ng-click="showResults()">Results</button></li>
+      </ul>
     </div>
-    <div class="time-container">
+    <div class="body-container">
       <div ng-show="displayTimer">
         <div id="timer">{{minutes}}:{{seconds}}</div>
         <button class="btn btn-main btn-regular" ng-click='pauseTimer()' ng-hide="displayStart">Pause</button>

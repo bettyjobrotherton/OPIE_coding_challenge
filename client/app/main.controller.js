@@ -143,6 +143,7 @@ function MainController($scope, $window){
 
   function showResults(){
     $scope.displayTimer = false;
+    $scope.displayInputs = false;
     $scope.displayResults = false;
     $scope.displayTable = true;
   }
