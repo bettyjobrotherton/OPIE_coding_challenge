@@ -23,6 +23,7 @@ function MainController($scope, $window){
   $scope.calculateInput = calculateInput;
   $scope.saveTest = saveTest;
   $scope.showResults = showResults;
+  $scope.resetTable = resetTable;
 
   function timerCount(){
     var newMinutesValue;
@@ -141,11 +142,20 @@ function MainController($scope, $window){
   }
 
   function showResults(){
-    $scope.results = JSON.parse($window.localStorage['timed-test-results']);
     $scope.displayTimer = false;
     $scope.displayInputs = false;
     $scope.displayResults = false;
     $scope.displayTable = true;
+    if(!$window.localStorage['timed-test-results']){
+      $scope.results = [];
+    } else {
+      $scope.results = JSON.parse($window.localStorage['timed-test-results']);
+    }
+  }
+
+  function resetTable(){
+    $window.localStorage.clear();
+    showResults();
   }
 
 }

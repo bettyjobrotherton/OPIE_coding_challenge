@@ -28,7 +28,7 @@
         <button class="btn btn-go btn-regular" ng-click="calculateRate()">Submit</button>
       </div>
       <div ng-show="displayInputs">
-        <div class="form-inline inputs-form">
+        <div class="form-horizontal inputs-form">
           <label>Minutes: </label>
           <input type="text" class="form-control" ng-model="inputMins">
           <label>Seconds: </label>
@@ -84,6 +84,7 @@
               </tr>
           </tbody>
         </table>
+        <button class="btn btn-yield btn-block" ng-click="resetTable()">Clear Results</button>
       </div>
     </div>
 
