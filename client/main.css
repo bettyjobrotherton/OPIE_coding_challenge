@@ -12,8 +12,8 @@ body {
 }
 
 .header-container {
-  display: flex;
   display: -webkit-flex;
+  display: flex;
   text-align: center;
   align-content: center;
   justify-content: center;
@@ -26,20 +26,24 @@ body {
   display: -webkit-flex;
 }
 
-.time-container {
-  display: flex;
-  display: -webkit-flex;
+.body-container {
+  display: block;
+  margin-left: 125px;
   padding: 0 10px;
 }
 
-.button-container {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
-  -webkit-flex-direction: column;
+.nav-container {
+  display: block;
+}
+
+.nav-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   height: 100%;
-  /*position: fixed;
-  overflow: auto;*/
+  position: fixed;
+  overflow: auto;
+  width: 125px;
 }
 
 .btn-main {
@@ -64,9 +68,15 @@ body {
 }
 
 .btn-sidebar {
-  margin: 5px;
-  width: 125px;
+  display: block;
+  height: 2em;
+  width: 100%;
+  border: 0 none;
 }
+
+/*.btn-sidebar:active {
+  background-color: #00f9bb;
+}*/
 
 .btn-regular {
   margin: 5px;
@@ -111,4 +121,26 @@ input[type=text]:hover, textarea:hover {
 .table-head {
   text-align: center;
   font-size: 1.3em;
+}
+
+@media screen and (max-width:500px) {
+  .nav-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    overflow: auto;
+  }
+
+  .nav-container ul li {
+    width: 100%;
+  }
+
+  .body-container {
+    display: block;
+    margin: 125px 0 0 0;
+    padding: 0 5px;
+  }
 }
