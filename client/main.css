@@ -1,0 +1,63 @@
+/*
+primary background color: E1F4FA;
+secondary background color: 7DC3D1;
+primary color: #00BBF9;
+submit color: 6EB312;
+warning color: FF8234;
+*/
+
+body {
+  font-family: Arial, Calibri, sans-serif;
+  font-size: 1.5em;
+}
+
+.main-container {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.time-container {}
+
+.button-container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.btn-main {
+  background-color: #00BBF9;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  margin: 5px;
+  width: 200px;
+}
+
+.btn-go {
+  background-color: #6Eb312;
+  color: #FFFFFF;
+  font-size: 1.2em;
+}
+
+.btn-yield {
+  background-color: #FF8234;
+  color: #FFFFFF;
+  font-size: 1.2em;
+}
+
+.btn-under {
+  margin-top: 5px;
+}
+
+#timer {
+  padding-top: 10px;
+  font-size: 1.5em;
+}
+
+.inputs-form {
+  padding-top: 10px;
+}
+
+.like-label {
+  font-weight: 700;
+}
